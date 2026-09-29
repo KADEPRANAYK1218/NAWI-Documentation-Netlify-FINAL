@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>System Overview — NAWI Documentation</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="logo" aria-hidden="true">◈</div>
+    <div class="brand">NAWI Documentation</div>
+    <div class="search-wrap">
+      <span class="search-icon">⌕</span>
+      <input id="siteSearch" class="search" placeholder="Search" aria-label="Search documentation">
+      <div id="searchResults" class="search-results"></div>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-title">NAWI Documentation</div>
+    <nav class="nav">
+      <a class="" href="index.html">Home</a><a class="active" href="system-overview.html">System Overview</a><a class="" href="project-summary.html">Project Summary</a><a class="" href="project-architecture.html">Project Architecture</a><a class="" href="references.html">References</a>
+    </nav>
+  </aside>
+  <main class="content">
+    <div class="page-title">System Overview</div>
+    <h1>System Overview</h1>
+<h2>Project Name</h2>
+<p>**NAWI — OIML R-76 Test Report Generation System**</p>
+<h2>Problem Statement</h2>
+<p>**SIH26035 — Development of a Software Program/Application for Generation of Test Reports for Non-Automatic Weighing Instruments (NAWI) as per OIML Recommendation R-76**</p>
+<h2>Primary Goal</h2>
+<p>Develop a software application that digitizes and streamlines the testing and test-report generation process for Non-Automatic Weighing Instruments (NAWI).</p>
+<p>The system records instrument details, technical specifications, laboratory and environmental conditions, and test observations, performs validation and required calculations, determines compliance and generates standardized test reports according to OIML R-76.</p>
+<h2>Core Capabilities</h2>
+<h3>Instrument Registration</h3>
+<p>The system captures manufacturer details, instrument specifications, model information and technical parameters required for NAWI testing.</p>
+<h3>Laboratory & Environmental Conditions</h3>
+<p>The application records laboratory information and environmental conditions under which the instrument testing is performed.</p>
+<h3>OIML R-76 Test Management</h3>
+<p>The system provides structured digital forms for applicable OIML R-76 test procedures and allows laboratory personnel to record observations for each test.</p>
+<h3>Test Observation Entry</h3>
+<p>Testers can digitally enter measurement values, observations and other test-specific information obtained during the evaluation of the weighing instrument.</p>
+<h3>Automatic Calculations</h3>
+<p>The system automatically performs required calculations, including permissible-error calculations, based on the entered test observations and applicable OIML R-76 requirements.</p>
+<h3>Data Validation</h3>
+<p>The application performs validation checks on entered test data and related calculations to help identify invalid or inconsistent values before report generation.</p>
+<h3>Compliance Analysis</h3>
+<p>The system evaluates test observations and calculated results against the applicable OIML R-76 requirements.</p>
+<h3>Pass / Fail Determination</h3>
+<p>Based on the applicable requirements and validated test results, the system determines the compliance status of individual tests and the overall evaluation.</p>
+<h3>Test Report Generation</h3>
+<p>The application automatically prepares a standardized digital test report by combining instrument details, laboratory information, test observations, calculations and compliance results.</p>
+<h3>PDF & Editable Export</h3>
+<p>Generated reports can be exported in **PDF and editable formats such as Microsoft Word**, supporting further review and documentation.</p>
+<h3>Photograph & Document Attachments</h3>
+<p>The system supports attachment of photographs and supporting documents related to the instrument and testing process.</p>
+<h3>Report Dashboard</h3>
+<p>A centralized dashboard provides an overview of testing activities and report status, including reports that are **completed, in process and available in history**.</p>
+<h3>Report History & Repository</h3>
+<p>Completed reports are maintained in a digital repository. Users can search and retrieve previously generated reports using relevant instrument or report information.</p>
+<h3>Secure User Access</h3>
+<p>The application provides secure access with role-based permissions so users can access functions according to their assigned responsibilities.</p>
+<h3>Digital Signatures</h3>
+<p>The system can support digital signatures as an optional feature for authorized users during the report approval or documentation process.</p>
+<h3>Future OIML Updates</h3>
+<p>The system architecture can support future updates when applicable OIML recommendations or requirements are revised.</p>
+<h2>Technical Architecture</h2>
+<p>The system combines:</p>
+<ul>
+<li>Web-based laboratory application</li>
+<ul>
+<li>Frontend user interface</li>
+<ul>
+<li>Backend application services</li>
+<ul>
+<li>Instrument and technical specification database</li>
+<ul>
+<li>Laboratory and environmental data</li>
+<ul>
+<li>OIML R-76 test and rule layer</li>
+<ul>
+<li>Calculation engine</li>
+<ul>
+<li>Validation engine</li>
+<ul>
+<li>Compliance analysis module</li>
+<ul>
+<li>Test report generation module</li>
+<ul>
+<li>PDF and editable document export</li>
+<ul>
+<li>Photograph and document attachment storage</li>
+<ul>
+<li>Report repository</li>
+<ul>
+<li>Search and retrieval facility</li>
+<ul>
+<li>Dashboard and report-status management</li>
+<ul>
+<li>Role-based access control</li>
+<ul>
+<li>Regulatory reference layer</li>
+<h2>System Workflow</h2>
+    <div class="footer">SIH26035 — NAWI Test Report Generation System</div>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
