@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project Architecture — NAWI Documentation</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="logo" aria-hidden="true">◈</div>
+    <div class="brand">NAWI Documentation</div>
+    <div class="search-wrap">
+      <span class="search-icon">⌕</span>
+      <input id="siteSearch" class="search" placeholder="Search" aria-label="Search documentation">
+      <div id="searchResults" class="search-results"></div>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-title">NAWI Documentation</div>
+    <nav class="nav">
+      <a class="" href="index.html">Home</a><a class="" href="system-overview.html">System Overview</a><a class="" href="project-summary.html">Project Summary</a><a class="active" href="project-architecture.html">Project Architecture</a><a class="" href="references.html">References</a>
+    </nav>
+  </aside>
+  <main class="content">
+    <div class="page-title">Project Architecture</div>
+    <h1>NAWI — Project Architecture</h1>
+<h2>Development of a Software Program/Application for Generation of Test Reports for Non-Automatic Weighing Instruments (NAWI) as per OIML Recommendation R-76</h2>
+<p>---</p>
+<h2>📁 Complete Project Structure</h2>
+<pre><code>NAWI/
+│
+├── src/
+│   ├── App.tsx
+│   ├── main.tsx
+│   ├── index.css
+│   └── assets/
+│       └── images/
+│           ├── ashoka_emblem_logo_1790519895046.jpg
+│           ├── india_emblem_logo_1790516515609.jpg
+│           ├── metrology_lab_bg_1790233420306.jpg
+│           ├── metrology_login_hero_1790513847507.jpg
+│           └── nawi_login_bg_1790523100448.jpg
+│
+├── frontend/
+│   ├── public/
+│   │   ├── india_emblem_logo.png
+│   │   └── india_emblem_logo.jpg
+│   │
+│   └── src/
+│       ├── components/
+│       │   ├── DocumentViewerModal.jsx
+│       │   ├── FormField.jsx
+│       │   ├── IndiaEmblem.jsx
+│       │   ├── Loading.jsx
+│       │   ├── Modal.jsx
+│       │   ├── Navbar.jsx
+│       │   ├── NotificationDropdown.jsx
+│       │   ├── ReportTable.jsx
+│       │   ├── Sidebar.jsx
+│       │   ├── StatCard.jsx
+│       │   ├── StatusBadge.jsx
+│       │   └── TestStepper.jsx
+│       │
+│       ├── context/
+│       │   └── AuthContext.jsx
+│       │
+│       ├── pages/
+│       │   ├── ComplianceResult.jsx
+│       │   ├── CreateTestReport.jsx
+│       │   ├── Dashboard.jsx
+│       │   ├── InstrumentDetails.jsx
+│       │   ├── LaboratoryEnvironment.jsx
+│       │   ├── Login.jsx
+│       │   ├── RegulatoryReferences.jsx
+│       │   ├── ReportPreview.jsx
+│       │   ├── ReportRepository.jsx
+│       │   ├── SelectTests.jsx
+│       │   ├── Settings.jsx
+│       │   ├── TestObservations.jsx
+│       │   └── UserManagement.jsx
+│       │
+│       ├── services/
+│       │   ├── api.js
+│       │   ├── authService.js
+│       │   ├── instrumentService.js
+│       │   ├── reportService.js
+│       │   └── testService.js
+│       │
+│       ├── styles/
+│       │   ├── dashboard.css
+│       │   ├── forms.css
+│       │   ├── global.css
+│       │   ├── login.css
+│       │   ├── reports.css
+│       │   └── sidebar.css
+│       │
+│       └── assets/
+│           └── images/
+│               ├── india_emblem_logo.jpg
+│               ├── metrology_login_hero.jpg
+│               └── nawi_login_bg.jpg
+│
+├── backend/
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── .env.example
+│   │
+│   └── src/
+│       ├── config/
+│       │   └── database.js
+│       │
+│       ├── controllers/
+│       │   ├── authController.js
+│       │   ├── instrumentController.js
+│       │   ├── reportController.js
+│       │   ├── testController.js
+│       │   └── userController.js
+│       │
+│       ├── middleware/
+│       │   ├── authMiddleware.js
+│       │   ├── errorMiddleware.js
+│       │   └── roleMiddleware.js
+│       │
+│       ├── models/
+│       │   ├── Attachment.js
+│       │   ├── Instrument.js
+│       │   ├── TestObservation.js
+│       │   ├── TestReport.js
+│       │   └── User.js
+│       │
+│       ├── routes/
+│       │   ├── authRoutes.js
+│       │   ├── instrumentRoutes.js
+│       │   ├── reportRoutes.js
+│       │   ├── testRoutes.js
+│       │   └── userRoutes.js
+│       │
+│       ├── rules/
+│       │   └── oimlR76Rules.js
+│       │
+│       ├── services/
+│       │   ├── calculationService.js
+│       │   ├── complianceService.js
+│       │   ├── pdfService.js
+│       │   ├── validationService.js
+│       │   └── wordService.js
+│       │
+│       └── server.js
+│
+├── database/
+│   ├── schema.sql
+│   └── seed.js
+│
+├── public/
+│   ├── india_emblem_logo.png
+│   ├── india_emblem_logo.jpg
+│   └── nawi_login_bg.jpg
+│
+├── index.html
+├── server.ts
+├── package.json
+├── package-lock.json
+├── bun.lock
+├── tsconfig.json
+├── vite.config.ts
+├── .env
+├── .env.example
+├── .gitignore
+├── .npmrc
+└── metadata.json</code></pre>
+<p>---</p>
+<h1>🎯 Architecture Overview</h1>
+<p>The NAWI application is organized into four main layers:</p>
+<pre><code>┌───────────────────────────────────────────────┐
+│                  FRONTEND                     │
+│                                               │
+│ React / JSX • Pages • Components • Services   │
+│ Forms • Dashboard • Reports • Navigation      │
+└──────────────────────┬────────────────────────┘
+                       │
+                       │ REST API
+                       ▼
+┌───────────────────────────────────────────────┐
+│                  BACKEND                      │
+│                                               │
+│ Node.js + Express                             │
+│ Controllers • Routes • Middleware • Services  │
+│ Rules • Authentication • Report Generation    │
+└──────────────────────┬────────────────────────┘
+                       │
+                       ▼
+┌───────────────────────────────────────────────┐
+│                  DATABASE                     │
+│                                               │
+│ PostgreSQL Schema                             │
+│ Users • Instruments • Reports • Observations  │
+│ References • Rules • Attachments • Audit Logs │
+└───────────────────────────────────────────────┘</code></pre>
+<p>---</p>
+<h1>🖥️ Frontend Architecture</h1>
+<h2>`frontend/src/pages/`</h2>
+<p>The pages folder contains the main application screens and workflow stages.</p>
+<h3>Login</h3>
+<p>`Login.jsx`</p>
+<p>Provides the application login interface and authentication entry point.</p>
+<h3>Dashboard</h3>
+<p>`Dashboard.jsx`</p>
+<p>Provides the central overview of test reports and laboratory activity.</p>
+<h3>Create Test Report</h3>
+<p>`CreateTestReport.jsx`</p>
+<p>Controls the test-report creation workflow.</p>
+<h3>Instrument Details</h3>
+<p>`InstrumentDetails.jsx`</p>
+<p>Captures NAWI manufacturer, model, serial number, capacity, accuracy class and related instrument information.</p>
+<h3>Laboratory Environment</h3>
+<p>`LaboratoryEnvironment.jsx`</p>
+<p>Captures laboratory and environmental conditions associated with testing.</p>
+<h3>Select Tests</h3>
+<p>`SelectTests.jsx`</p>
+<p>Allows applicable NAWI test procedures to be selected.</p>
+<h3>Test Observations</h3>
+<p>`TestObservations.jsx`</p>
+<p>Captures test-point observations and measured values.</p>
+<h3>Compliance Result</h3>
+<p>`ComplianceResult.jsx`</p>
+<p>Displays the calculated compliance outcome.</p>
+<h3>Report Preview</h3>
+<p>`ReportPreview.jsx`</p>
+<p>Provides the generated report preview before final use.</p>
+<h3>Report Repository</h3>
+<p>`ReportRepository.jsx`</p>
+<p>Provides report listing, retrieval and historical report access.</p>
+<h3>Regulatory References</h3>
+<p>`RegulatoryReferences.jsx`</p>
+<p>Provides access to the regulatory and standards reference information used by the system.</p>
+<h3>User Management</h3>
+<p>`UserManagement.jsx`</p>
+<p>Provides user-management functionality.</p>
+<h3>Settings</h3>
+<p>`Settings.jsx`</p>
+<p>Provides application settings.</p>
+<p>---</p>
+<h1>🧩 Frontend Components</h1>
+<h2>`frontend/src/components/`</h2>
+<p>| Component | Purpose |</p>
+<p>|---|---|</p>
+<p>| `Navbar.jsx` | Application navigation/header |</p>
+<p>| `Sidebar.jsx` | Main sidebar navigation |</p>
+<p>| `IndiaEmblem.jsx` | Government emblem display |</p>
+<p>| `StatCard.jsx` | Dashboard statistics |</p>
+<p>| `StatusBadge.jsx` | Report/status indicators |</p>
+<p>| `ReportTable.jsx` | Report listing/table |</p>
+<p>| `TestStepper.jsx` | Multi-stage test workflow navigation |</p>
+<p>| `FormField.jsx` | Reusable form field |</p>
+<p>| `Modal.jsx` | Reusable modal interface |</p>
+<p>| `DocumentViewerModal.jsx` | Document/report viewing interface |</p>
+<p>| `NotificationDropdown.jsx` | Notification interface |</p>
+<p>| `Loading.jsx` | Loading state |</p>
+<p>---</p>
+<h1>🔐 Authentication Context</h1>
+<h2>`frontend/src/context/AuthContext.jsx`</h2>
+<p>Provides authentication state to the frontend and supports protected application access.</p>
+<p>The backend also contains authentication and role middleware for protected operations.</p>
+<p>---</p>
+<h1>🔌 Frontend Services</h1>
+<h2>`frontend/src/services/`</h2>
+<pre><code>api.js
+   │
+   ├── authService.js
+   ├── instrumentService.js
+   ├── reportService.js
+   └── testService.js</code></pre>
+<p>These services provide the frontend communication layer for authentication, instrument information, reports and test operations.</p>
+<p>---</p>
+<h1>🎨 Frontend Styling</h1>
+<h2>`frontend/src/styles/`</h2>
+<pre><code>Dashboard Styles     → dashboard.css
+Form Styles          → forms.css
+Global Styles        → global.css
+Login Styles         → login.css
+Report Styles        → reports.css
+Sidebar Styles       → sidebar.css</code></pre>
+<p>---</p>
+<h1>⚙️ Backend Architecture</h1>
+<h2>`backend/src/`</h2>
+<p>The backend is organized into configuration, controllers, middleware, models, routes, rule definitions and services.</p>
+<pre><code>backend/src/
+│
+├── config/
+├── controllers/
+├── middleware/
+├── models/
+├── routes/
+├── rules/
+├── services/
+└── server.js</code></pre>
+<p>---</p>
+<h1>🎛️ Controllers</h1>
+<h2>`backend/src/controllers/`</h2>
+<pre><code>Authentication Controller
+        ↓
+authController.js
+
+Instrument Controller
+        ↓
+instrumentController.js
+
+Report Controller
+        ↓
+reportController.js
+
+Test Controller
+        ↓
+testController.js
+
+User Controller
+        ↓
+userController.js</code></pre>
+<p>Controllers handle incoming application requests and connect the routes with the required application operations.</p>
+<p>---</p>
+<h1>🛡️ Middleware</h1>
+<h2>`backend/src/middleware/`</h2>
+<h3>`authMiddleware.js`</h3>
+<p>Handles authentication protection for backend operations.</p>
+<h3>`roleMiddleware.js`</h3>
+<p>Provides role-based access control.</p>
+<h3>`errorMiddleware.js`</h3>
+<p>Provides centralized backend error handling.</p>
+<p>---</p>
+<h1>🗃️ Backend Models</h1>
+<h2>`backend/src/models/`</h2>
+<pre><code>User
+ │
+ ├── Test Reports
+ │     ├── Instrument
+ │     ├── Test Observations
+ │     └── Attachments
+ │
+ └── User / Review information</code></pre>
+<p>Available model files:</p>
+<ul>
+<li>`User.js`</li>
+<ul>
+<li>`Instrument.js`</li>
+<ul>
+<li>`TestReport.js`</li>
+<ul>
+<li>`TestObservation.js`</li>
+<ul>
+<li>`Attachment.js`</li>
+<p>---</p>
+<h1>🛣️ Backend Routes</h1>
+<h2>`backend/src/routes/`</h2>
+<pre><code>authRoutes.js
+instrumentRoutes.js
+reportRoutes.js
+testRoutes.js
+userRoutes.js</code></pre>
+<p>These routes provide the API entry points for authentication, instruments, reports, tests and user operations.</p>
+<p>---</p>
+<h1>📏 OIML R-76 Rule Layer</h1>
+<h2>`backend/src/rules/oimlR76Rules.js`</h2>
+<p>This module contains the project's configured OIML R-76-oriented rule logic used by the application workflow.</p>
+<pre><code>Instrument Information
+        ↓
+Accuracy Class / Verification Interval
+        ↓
+Applicable Test Requirement
+        ↓
+Observation
+        ↓
+Calculation
+        ↓
+Compliance Result</code></pre>
+<p>The configured values are part of the prototype and should be verified against the applicable official standard and current regulatory requirements before real regulatory use.</p>
+<p>---</p>
+<h1>🧮 Backend Services</h1>
+<h2>`backend/src/services/`</h2>
+<h3>`calculationService.js`</h3>
+<p>Handles calculation operations used by the test-report workflow.</p>
+<h3>`complianceService.js`</h3>
+<p>Evaluates configured requirements and produces compliance results.</p>
+<h3>`validationService.js`</h3>
+<p>Handles validation of application and test data.</p>
+<h3>`pdfService.js`</h3>
+<p>Generates PDF test reports.</p>
+<h3>`wordService.js`</h3>
+<p>Generates editable Word test reports.</p>
+<pre><code>Test Observations
+        ↓
+Validation Service
+        ↓
+Calculation Service
+        ↓
+Compliance Service
+        ↓
+Report Controller
+        ├───────────────┐
+        ▼               ▼
+PDF Service       Word Service
+        │               │
+        ▼               ▼
+     PDF Report     Word Report</code></pre>
+<p>---</p>
+<h1>🗄️ Database Architecture</h1>
+<h2>`database/`</h2>
+<pre><code>database/
+├── schema.sql
+└── seed.js</code></pre>
+<p>The PostgreSQL schema contains the following major tables:</p>
+<pre><code>users
+instruments
+test_reports
+laboratory_conditions
+test_observations
+attachments
+regulatory_references
+rule_configurations
+audit_logs</code></pre>
+<h3>Relationship Overview</h3>
+<pre><code>USER
+ │
+ ├───────────────┐
+ │               │
+ ▼               ▼
+TEST REPORT   AUDIT LOG
+ │
+ ├── INSTRUMENT
+ │
+ ├── LABORATORY CONDITIONS
+ │
+ ├── TEST OBSERVATIONS
+ │
+ └── ATTACHMENTS</code></pre>
+<p>---</p>
+<h1>📝 Report Generation Architecture</h1>
+<pre><code>Instrument Details
+        ↓
+Laboratory Conditions
+        ↓
+Selected Tests
+        ↓
+Test Observations
+        ↓
+Calculated Errors
+        ↓
+Compliance Evaluation
+        ↓
+Report Preview
+        ↓
+┌─────────────────────┐
+│ Generate Report     │
+└─────────┬───────────┘
+          │
+     ┌────┴────┐
+     ▼         ▼
+   PDF       WORD</code></pre>
+<p>The project contains dedicated services for both PDF and editable Word report generation.</p>
+<p>---</p>
+<h1>🔄 Complete Application Workflow</h1>
+<pre><code>LOGIN
+  │
+  ▼
+DASHBOARD
+  │
+  ▼
+CREATE TEST REPORT
+  │
+  ├── Instrument Details
+  │
+  ├── Laboratory Environment
+  │
+  ├── Select Tests
+  │
+  ├── Test Observations
+  │
+  └── Compliance Result
+  │
+  ▼
+REPORT PREVIEW
+  │
+  ├── PDF
+  └── WORD
+  │
+  ▼
+REPORT REPOSITORY
+  │
+  ├── View
+  ├── Search
+  └── Historical Reports</code></pre>
+<p>---</p>
+<h1>🏛️ Regulatory Reference Layer</h1>
+<p>The application includes `RegulatoryReferences.jsx` on the frontend and the `regulatory_references` / `rule_configurations` tables in the database.</p>
+<p>The project documentation references:</p>
+<ul>
+<li>Department of Consumer Affairs — Legal Metrology Act</li>
+<ul>
+<li>Legal Metrology (General) Rules, 2011</li>
+<ul>
+<li>OIML Recommendation R-76 for Non-Automatic Weighing Instruments</li>
+<p>Dataset/reference link supplied for the project:</p>
+<p>https://consumeraffairs.gov.in/pages/legal-metrology-act</p>
+<p>---</p>
+<h1>👥 User Roles</h1>
+<p>The database schema defines these application roles:</p>
+<pre><code>ADMIN
+LABORATORY_OFFICER
+TEST_ENGINEER
+REVIEWER
+VIEWER</code></pre>
+<p>Role-based access is supported through the backend `roleMiddleware.js` layer.</p>
+<p>---</p>
+<h1>🔒 Security & Access Architecture</h1>
+<pre><code>LOGIN
+  ↓
+Authentication
+  ↓
+JWT / Protected Access
+  ↓
+Role Authorization
+  ↓
+Application Operation
+  ↓
+Audit Information</code></pre>
+<p>The project contains authentication middleware, role middleware and user-management functionality.</p>
+<p>---</p>
+<h1>📊 Data Flow</h1>
+<pre><code>USER
+ ↓
+FRONTEND FORM
+ ↓
+FRONTEND SERVICE
+ ↓
+REST API
+ ↓
+CONTROLLER
+ ↓
+VALIDATION
+ ↓
+CALCULATION / COMPLIANCE
+ ↓
+DATABASE
+ ↓
+REPORT GENERATION
+ ↓
+PDF / WORD</code></pre>
+<p>---</p>
+<h1>🛠️ Technology Stack Present in the Project</h1>
+<h2>Frontend</h2>
+<ul>
+<li>React</li>
+<ul>
+<li>React DOM</li>
+<ul>
+<li>React Router</li>
+<ul>
+<li>Vite</li>
+<ul>
+<li>JavaScript / JSX</li>
+<ul>
+<li>TypeScript entry/configuration</li>
+<ul>
+<li>Tailwind CSS tooling</li>
+<ul>
+<li>Lucide React</li>
+<ul>
+<li>Recharts</li>
+<ul>
+<li>Motion</li>
+<ul>
+<li>Axios</li>
+<h2>Backend</h2>
+<ul>
+<li>Node.js</li>
+<ul>
+<li>Express.js</li>
+<ul>
+<li>JWT</li>
+<ul>
+<li>bcryptjs</li>
+<ul>
+<li>CORS</li>
+<ul>
+<li>Multer</li>
+<ul>
+<li>dotenv</li>
+<h2>Database</h2>
+<ul>
+<li>PostgreSQL schema</li>
+<ul>
+<li>UUID support</li>
+<ul>
+<li>Relational tables</li>
+<ul>
+<li>Foreign-key relationships</li>
+<ul>
+<li>Status constraints</li>
+<ul>
+<li>Audit logging</li>
+<h2>Report Generation</h2>
+<ul>
+<li>PDFKit</li>
+<ul>
+<li>DOCX</li>
+<p>---</p>
+<h1>📦 Root Configuration</h1>
+<pre><code>package.json
+package-lock.json
+bun.lock
+tsconfig.json
+vite.config.ts
+server.ts
+index.html
+metadata.json
+.env
+.env.example
+.gitignore
+.npmrc</code></pre>
+<p>The project also contains a separate backend package configuration under `backend/package.json`.</p>
+<p>---</p>
+<h1>🚀 Deployment / Runtime Structure</h1>
+<p>The project contains a Vite/React frontend structure and a Node/Express backend structure.</p>
+<pre><code>Frontend
+   ↓
+Vite / React
+   ↓
+API Requests
+   ↓
+Node.js + Express Backend
+   ↓
+PostgreSQL Database
+   ↓
+Report Generation Services</code></pre>
+<p>---</p>
+<h1>⚠️ Prototype Note</h1>
+<p>This architecture document describes the actual file and module structure found in the supplied NAWI project ZIP.</p>
+<p>The project is intended as a prototype for the stated problem:</p>
+<p>> **Development of a Software Program/Application for Generation of Test Reports for Non-Automatic Weighing Instruments (NAWI) as per OIML Recommendation R-76**</p>
+<p>Configured OIML-related rule values and demonstration logic must be verified against the applicable official OIML recommendation, Indian Legal Metrology requirements, amendments and laboratory procedures before regulatory or certification use.</p>
+<p>---</p>
+<h1>🎯 Final Architecture Summary</h1>
+<pre><code>                 NAWI TEST REPORT SYSTEM
+                           │
+                           ▼
+                    React Frontend
+                           │
+              ┌────────────┴────────────┐
+              ▼                         ▼
+        Test Workflow              Report UI
+              │                         │
+              └────────────┬────────────┘
+                           ▼
+                   Express Backend
+                           │
+       ┌──────────┬────────┼──────────┐
+       ▼          ▼        ▼          ▼
+   Validation Calculation Compliance Authentication
+       │          │        │          │
+       └──────────┴────────┴──────────┘
+                           │
+                           ▼
+                  PostgreSQL Database
+                           │
+             ┌─────────────┴─────────────┐
+             ▼                           ▼
+        Test Reports               Audit / Rules
+             │
+             ▼
+      PDF + Editable Word</code></pre>
+<h3>**NAWI — Digitizing the workflow from instrument testing and observations to structured, traceable test reports.**</h3>
+    <div class="footer">SIH26035 — NAWI Test Report Generation System</div>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
