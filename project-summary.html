@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project Summary — NAWI Documentation</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="logo" aria-hidden="true">◈</div>
+    <div class="brand">NAWI Documentation</div>
+    <div class="search-wrap">
+      <span class="search-icon">⌕</span>
+      <input id="siteSearch" class="search" placeholder="Search" aria-label="Search documentation">
+      <div id="searchResults" class="search-results"></div>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-title">NAWI Documentation</div>
+    <nav class="nav">
+      <a class="" href="index.html">Home</a><a class="" href="system-overview.html">System Overview</a><a class="active" href="project-summary.html">Project Summary</a><a class="" href="project-architecture.html">Project Architecture</a><a class="" href="references.html">References</a>
+    </nav>
+  </aside>
+  <main class="content">
+    <div class="page-title">Project Summary</div>
+    <h1>Project Summary</h1>
+<h2>1. Project Structure & Foundation</h2>
+<ul>
+<li>React + TypeScript frontend</li>
+<ul>
+<li>Vite development and build setup</li>
+<ul>
+<li>Node.js + Express backend</li>
+<ul>
+<li>Modular React components</li>
+<ul>
+<li>Responsive Legal Metrology testing interface</li>
+<ul>
+<li>Structured workflow for Non-Automatic Weighing Instrument (NAWI) testing</li>
+<ul>
+<li>Project configuration and environment template</li>
+<h2>2. Instrument Registration & Test Setup</h2>
+<p>The application provides a structured workflow for entering and managing information required before conducting a NAWI test, including:</p>
+<ul>
+<li>Instrument identification</li>
+<ul>
+<li>Manufacturer and model details</li>
+<ul>
+<li>Serial number</li>
+<ul>
+<li>Capacity and weighing range</li>
+<ul>
+<li>Accuracy class</li>
+<ul>
+<li>Scale interval / verification scale interval</li>
+<ul>
+<li>Type of weighing instrument</li>
+<ul>
+<li>Location of verification/testing</li>
+<ul>
+<li>Test date and time</li>
+<ul>
+<li>Inspector / authorized person details</li>
+<ul>
+<li>Applicable test standard</li>
+<ul>
+<li>Test configuration and conditions</li>
+<h2>3. NAWI Test Management</h2>
+<p>The core functionality is designed around the testing of Non-Automatic Weighing Instruments in accordance with applicable requirements of **OIML Recommendation R 76** and the Indian Legal Metrology framework.</p>
+<p>The prototype organizes testing around relevant test activities such as:</p>
+<ul>
+<li>Zero indication / zero-setting checks</li>
+<ul>
+<li>Accuracy and error evaluation</li>
+<ul>
+<li>Repeatability testing</li>
+<ul>
+<li>Eccentricity / corner-load testing</li>
+<ul>
+<li>Weighing performance checks</li>
+<ul>
+<li>Increasing-load testing</li>
+<ul>
+<li>Decreasing-load testing</li>
+<ul>
+<li>Tare-related tests where applicable</li>
+<ul>
+<li>Indication and display verification</li>
+<ul>
+<li>Load application and observation recording</li>
+<ul>
+<li>Test-result validation</li>
+<h2>4. Intelligent Test Calculations</h2>
+<p>The application is designed to reduce manual calculations during NAWI verification by providing:</p>
+<ul>
+<li>Automatic calculation of errors</li>
+<ul>
+<li>Comparison of observed values against permissible limits</li>
+<ul>
+<li>Automatic determination of test results</li>
+<ul>
+<li>Calculation of deviations where applicable</li>
+<ul>
+<li>Validation of entered measurement values</li>
+<ul>
+<li>Identification of failed or incomplete test conditions</li>
+<ul>
+<li>Structured pass/fail evaluation</li>
+<ul>
+<li>Reduction of manual arithmetic and transcription errors</li>
+<p>All calculation and acceptance logic should be mapped to the applicable provisions of **OIML R 76** and Indian Legal Metrology requirements before deployment for official regulatory use.</p>
+<h2>5. Test Data & Observation Management</h2>
+<p>The system provides a structured digital record for test observations, including:</p>
+<ul>
+<li>Applied test load</li>
+<ul>
+<li>Indicated value</li>
+<ul>
+<li>Error / deviation</li>
+<ul>
+<li>Test condition</li>
+<ul>
+<li>Reference or standard value</li>
+<ul>
+<li>Test result</li>
+<ul>
+<li>Inspector observations</li>
+<ul>
+<li>Remarks</li>
+<ul>
+<li>Date and time of testing</li>
+<p>The digital workflow helps maintain consistency between individual test observations and the final generated report.</p>
+<h2>6. Automated Test Report Generation</h2>
+<p>A major objective of the SIH26035 application is to automatically generate a standardized test report from the information and observations entered during testing.</p>
+<p>The report-generation module can include:</p>
+<ul>
+<li>Instrument identification details</li>
+<ul>
+<li>Manufacturer and model information</li>
+<ul>
+<li>Serial number</li>
+<ul>
+<li>Capacity and accuracy information</li>
+<ul>
+<li>Applicable standard/reference</li>
+<ul>
+<li>Test conditions</li>
+<ul>
+<li>Individual test observations</li>
+<ul>
+<li>Calculated errors</li>
+<ul>
+<li>Permissible limits</li>
+<ul>
+<li>Pass/fail results</li>
+<ul>
+<li>Inspector remarks</li>
+<ul>
+<li>Verification details</li>
+<ul>
+<li>Date and location</li>
+<ul>
+<li>Final test conclusion</li>
+<ul>
+<li>Signature / authorization fields</li>
+<p>The generated report is intended to reduce repetitive manual documentation and provide a consistent format for NAWI test records.</p>
+<h2>7. Legal Metrology Compliance Support</h2>
+<p>The application is designed with the Indian Legal Metrology framework in mind, particularly:</p>
+<ul>
+<li>Legal Metrology Act, 2009</li>
+<ul>
+<li>Legal Metrology (General) Rules, 2011</li>
+<ul>
+<li>Applicable requirements for weighing and measuring instruments</li>
+<ul>
+<li>Verification and stamping-related workflows</li>
+<ul>
+<li>Documentation and record-keeping requirements</li>
+<ul>
+<li>OIML Recommendation R 76 for Non-Automatic Weighing Instruments</li>
+<p>Official Government of India Legal Metrology information is available through the Department of Consumer Affairs:</p>
+<p>https://consumeraffairs.gov.in/pages/legal-metrology-act</p>
+<h2>8. Dashboard & Workflow</h2>
+<p>The main application dashboard brings together:</p>
+<ul>
+<li>Instrument Registration</li>
+<ul>
+<li>Test Setup</li>
+<ul>
+<li>NAWI Test Procedures</li>
+<ul>
+<li>Measurement Entry</li>
+<ul>
+<li>Automatic Calculations</li>
+<ul>
+<li>Test Results</li>
+<ul>
+<li>Test History</li>
+<ul>
+<li>Reports</li>
+<ul>
+<li>Instrument Records</li>
+<ul>
+<li>Inspector Information</li>
+<ul>
+<li>Settings</li>
+<ul>
+<li>Logout</li>
+<p>The workflow is designed to follow a logical sequence:</p>
+<p>**Register Instrument → Configure Test → Enter Observations → Calculate Results → Validate Tests → Generate Report**</p>
+<h2>9. Backend & Data Management</h2>
+<p>The Node.js/Express backend provides support for:</p>
+<ul>
+<li>Application health checking</li>
+<ul>
+<li>Instrument data management</li>
+<ul>
+<li>Test-record management</li>
+<ul>
+<li>Test-result storage</li>
+<ul>
+<li>Report data preparation</li>
+<ul>
+<li>Settings management</li>
+<ul>
+<li>Persistent configuration</li>
+<ul>
+<li>Audit-log handling</li>
+<ul>
+<li>Configuration reset</li>
+<p>The backend architecture can be extended in future versions to support centralized databases, user authentication, role-based access, and secure government/departmental deployments.</p>
+<h2>10. Digital Records & Traceability</h2>
+<p>The prototype supports the concept of maintaining structured digital records for:</p>
+<ul>
+<li>Instruments</li>
+<ul>
+<li>Test sessions</li>
+<ul>
+<li>Measurement observations</li>
+<ul>
+<li>Calculated results</li>
+<ul>
+<li>Generated reports</li>
+<ul>
+<li>Inspector information</li>
+<ul>
+<li>Date and time of testing</li>
+<ul>
+<li>Remarks and verification history</li>
+<p>This provides a foundation for improving traceability and reducing dependency on manually maintained test documentation.</p>
+<h2>11. Report & Document Management</h2>
+<p>The application can provide digital report-generation and management capabilities, including:</p>
+<ul>
+<li>Generate test report</li>
+<ul>
+<li>Preview report</li>
+<ul>
+<li>Download/print report</li>
+<ul>
+<li>Store report metadata</li>
+<ul>
+<li>Search previous test records</li>
+<ul>
+<li>View test history</li>
+<ul>
+<li>Reuse instrument information for subsequent tests</li>
+<h2>12. Technical Stack</h2>
+<ul>
+<li>React</li>
+<ul>
+<li>TypeScript</li>
+<ul>
+<li>Vite</li>
+<ul>
+<li>Node.js</li>
+<ul>
+<li>Express</li>
+<ul>
+<li>Tailwind CSS</li>
+<ul>
+<li>Lucide React</li>
+<ul>
+<li>Recharts</li>
+<ul>
+<li>jsPDF</li>
+<ul>
+<li>OIML R 76-based test workflow</li>
+<ul>
+<li>Legal Metrology reference framework</li>
+<h2>13. Reference Framework</h2>
+<p>The prototype is developed with reference to:</p>
+<p>1. **Department of Consumer Affairs, Government of India — Legal Metrology**</p>
+<p>   https://consumeraffairs.gov.in/pages/legal-metrology-act</p>
+<p>2. **Legal Metrology (General) Rules, 2011**</p>
+<p>   Government of India regulatory framework applicable to legal-metrology activities.</p>
+<p>3. **OIML Recommendation R 76 — Non-Automatic Weighing Instruments**</p>
+<p>   International recommendation defining relevant metrological and technical requirements and test procedures for NAWI.</p>
+<p>These references provide the regulatory and technical context for the proposed application.</p>
+<h2>Project Status</h2>
+<p>The uploaded project is a **student prototype for SIH26035** demonstrating a digital workflow for testing Non-Automatic Weighing Instruments and generating structured test reports.</p>
+<p>The prototype is intended to demonstrate:</p>
+<ul>
+<li>Digital NAWI test workflows</li>
+<ul>
+<li>Structured measurement entry</li>
+<ul>
+<li>Automated calculations</li>
+<ul>
+<li>Test-result evaluation</li>
+<ul>
+<li>Digital record management</li>
+<ul>
+<li>Automated report generation</li>
+<ul>
+<li>Alignment with OIML R 76 and the Indian Legal Metrology framework</li>
+<p>The prototype should **not be considered an officially approved Legal Metrology verification or certification system**. Before deployment in an official regulatory environment, all calculations, permissible-error criteria, test procedures, report formats, security controls, audit requirements, and regulatory mappings should be validated against the current applicable versions of OIML R 76 and Indian Legal Metrology requirements.</p>
+<h2>Future Enhancements</h2>
+<p>Potential future development includes:</p>
+<ul>
+<li>Integration with weighing instruments and digital indicators</li>
+<ul>
+<li>Direct data capture from compatible instruments</li>
+<ul>
+<li>Barcode / QR-code-based instrument identification</li>
+<ul>
+<li>Digital signatures</li>
+<ul>
+<li>Role-based authentication</li>
+<ul>
+<li>Secure cloud or departmental database</li>
+<ul>
+<li>Advanced audit trails</li>
+<ul>
+<li>Mobile/tablet testing support</li>
+<ul>
+<li>Offline test-data collection</li>
+<ul>
+<li>Automated report numbering</li>
+<ul>
+<li>PDF and digitally signed report generation</li>
+<ul>
+<li>Centralized test-history management</li>
+<ul>
+<li>Instrument calibration/verification history</li>
+<ul>
+<li>Integration with departmental Legal Metrology systems</li>
+<ul>
+<li>Automated compliance validation against updated regulatory requirements</li>
+    <div class="footer">SIH26035 — NAWI Test Report Generation System</div>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
